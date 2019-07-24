@@ -2,9 +2,9 @@
   <header class>
     <nav class="container mx-auto flex flex-wrap justify-between items-center py-8">
       <div>
-        <g-link to="/">
-          <g-image src="../../static/logo.svg" class="w-40" alt="logo" />
-        </g-link>
+        <div>
+          <slot name="logo" />
+        </div>
       </div>
       <div class="block lg:hidden">
         <button
@@ -24,11 +24,10 @@
         class="uppercase tracking-wide font-bold w-full block flex-grow lg:flex lg:flex-initial lg:w-auto items-center mt-8 lg:mt-0"
         :class="isOpen ? 'block' : 'hidden'"
       >
+        <slot name="switcher" />
+        <!-- Added theme switcher as slot to avoid emit event from child-->
         <li class="mr-8 mb-6 lg:mb-0">
           <g-link to="/projects" class="text-copy-primary hover:text-blue-600">Projects</g-link>
-        </li>
-        <li class="mr-8 mb-6 lg:mb-0">
-          <g-link to="/workshop" class="text-copy-primary hover:text-blue-600">Workshop</g-link>
         </li>
         <li class="mr-8 mb-6 lg:mb-0">
           <g-link to="/resume" class="text-copy-primary hover:text-blue-600">Resume</g-link>

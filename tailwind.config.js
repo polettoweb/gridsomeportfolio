@@ -68,7 +68,8 @@ module.exports = {
         600: "#3182CE",
         700: "#2B6CB0",
         800: "#2C5282",
-        900: "#2A4365"
+        900: "#2A4365",
+        1000: "#0d2438"
       }
     },
     fontFamily: {
@@ -102,6 +103,14 @@ module.exports = {
     // Some useful comment
   },
   plugins: [
-    // Some useful comment
+    function({ addUtilities }) {
+      const newUtilities = {
+        ".rotate-45": {
+          transform: "rotate(45deg)",
+          width: "300%"
+        }
+      };
+      addUtilities(newUtilities);
+    }
   ]
 };
